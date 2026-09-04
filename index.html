@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Velora Events | Curated Gatherings</title>
+    <meta
+      name="description"
+      content="A premium event booking experience for unforgettable celebrations."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style/styles.css" />
+  </head>
+  <body>
+    <div id="hero-section"></div>
+
+    <main>
+      <div id="events-section"></div>
+      <div id="about-section"></div>
+      <div id="features-section"></div>
+      <div id="vendors-section"></div>
+      <div id="support-section"></div>
+      <div id="admin-section"></div>
+      <div id="vendor-apply-section"></div>
+      <div id="booking-section"></div>
+    </main>
+
+    <div id="footer-section"></div>
+
+    <script src="script.js"></script>
+    <script>
+      async function loadSection(id, file) {
+        const container = document.getElementById(id);
+        if (!container) return;
+        const response = await fetch(file);
+        if (!response.ok) {
+          container.innerHTML =
+            '<p class="form-status">Unable to load section.</p>';
+          return;
+        }
+        const html = await response.text();
+        container.innerHTML = html;
+      }
+
+      window.addEventListener("DOMContentLoaded", () => {
+        loadSection("hero-section", "sections/hero.ejs");
+        loadSection("events-section", "sections/events.ejs");
+        loadSection("about-section", "sections/about.ejs");
+        loadSection("features-section", "sections/features.ejs");
+        loadSection("vendors-section", "sections/vendors.ejs");
+        loadSection("support-section", "sections/support.ejs");
+        loadSection("admin-section", "sections/admin.ejs");
+        loadSection("vendor-apply-section", "sections/vendor-apply.ejs");
+        loadSection("booking-section", "sections/booking.ejs");
+        loadSection("footer-section", "sections/footer.ejs");
+      });
+    </script>
+  </body>
+</html>

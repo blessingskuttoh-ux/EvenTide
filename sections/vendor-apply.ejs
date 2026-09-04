@@ -1,0 +1,63 @@
+<section id="vendor-apply" class="section">
+  <div class="section-heading">
+    <p class="eyebrow">Birthday event vendors</p>
+    <h2>
+      Service providers can login, apply for birthday event jobs, and get
+      selected for celebrations.
+    </h2>
+  </div>
+
+  <div class="vendor-apply-grid">
+    <div class="vendor-panel">
+      <h3>Vendor Login</h3>
+      <form id="vendorLoginForm" class="booking-form vendor-form">
+        <input
+          type="email"
+          name="vendorEmail"
+          placeholder="Business email"
+          required
+        />
+        <input
+          type="password"
+          name="vendorPassword"
+          placeholder="Password"
+          required
+        />
+        <button type="submit">Login</button>
+        <p id="vendorLoginStatus" class="form-status" aria-live="polite"></p>
+      </form>
+    </div>
+
+    <div class="vendor-panel">
+      <h3>Apply for Jobs</h3>
+      <form id="vendorApplyForm" class="booking-form vendor-form">
+        <input
+          type="text"
+          name="vendorName"
+          placeholder="Full name / Business name"
+          required
+        />
+        <input
+          type="email"
+          name="vendorApplyEmail"
+          placeholder="Email address"
+          required
+        />
+        <input
+          type="text"
+          name="serviceType"
+          placeholder="Service type (DJ, Catering, Decor, etc.)"
+          required
+        />
+        <input type="text" name="location" placeholder="Location" required />
+        <textarea
+          name="experience"
+          rows="4"
+          placeholder="Tell us about your experience and availability"
+        ></textarea>
+        <button type="submit">Apply for Birthday Jobs</button>
+        <p id="vendorApplyStatus" class="form-status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
